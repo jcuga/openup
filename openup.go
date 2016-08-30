@@ -17,7 +17,7 @@ func main() {
 		// connect to router
 		d, dErr := upnp.Discover()
 		if dErr != nil {
-			fmt.Printf("Error discovering router: %v", dErr)
+			fmt.Printf("Error discovering router: %v\n", dErr)
 			os.Exit(1)
 		}
 		// discover external IP
@@ -26,12 +26,12 @@ func main() {
 		return
 	}
 	if *portPtr < 0 {
-		fmt.Printf("Invalid port number, must be > 0.  Got: %d", *portPtr)
+		fmt.Printf("Invalid port number, must be > 0.  Got: %d\n", *portPtr)
 		os.Exit(1)
 	}
 	d, dErr := upnp.Discover()
 	if dErr != nil {
-		fmt.Printf("Error discovering router: %v", dErr)
+		fmt.Printf("Error discovering router: %v\n", dErr)
 		os.Exit(1)
 	}
 	var proto string
@@ -45,14 +45,14 @@ func main() {
 		fmt.Printf("Closing port forward for %s port %d\n", proto, *portPtr)
 		cErr := d.Clear(uint16(*portPtr), proto)
 		if cErr != nil {
-			fmt.Printf("Error closing port forward: %v", cErr)
+			fmt.Printf("Error closing port forward: %v\n", cErr)
 			os.Exit(1)
 		}
 	} else {
 		fmt.Printf("Opening port forward for %s port %d\n", proto, *portPtr)
 		fErr := d.Forward(uint16(*portPtr), "Requested by openup util.", proto)
 		if fErr != nil {
-			fmt.Printf("Error closing port forward: %v", fErr)
+			fmt.Printf("Error closing port forward: %v\n", fErr)
 			os.Exit(1)
 		}
 	}
