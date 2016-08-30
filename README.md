@@ -1,6 +1,11 @@
 # openup
 Utility that opens port forwards via upnp.  Written in golang.
 
+### When is this useful?
+If you ever want to expose an IP address on a LAN to the internet, you can set a port forward with your router via UPnP that will port forward from the router (public IP) to the machine on the local network (192.168.x.x address).
+
+Then you can hit the external IP address at the given port and it will get forwarded to the given machine on the local network.
+
 ## Usage
 ```
 $ ./openup -h
@@ -34,6 +39,4 @@ Opening port forward for UDP port 9979
 ```
 $ ./openup -close -port 5233 -udp
 Closing port forward for UDP port 5233
-```
-
-TODO: how long will port forward last if you don't explicitly close it?
+``` 
