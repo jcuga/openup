@@ -21,11 +21,15 @@ func main() {
 			os.Exit(1)
 		}
 		// discover external IP
-		ip, _ := d.ExternalIP()
+		ip, ipErr := d.ExternalIP()
+		if ipErr != nil {
+			fmt.Printf("Error fetching external IP address: %v\n", ipErr)
+			os.Exit(1)
+		}
 		fmt.Println("Your external IP is:", ip)
 		return
 	}
-	if *portPtr < 0 {
+	if *portPtr <= 0 {
 		fmt.Printf("Invalid port number, must be > 0.  Got: %d\n", *portPtr)
 		os.Exit(1)
 	}
