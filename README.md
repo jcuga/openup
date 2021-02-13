@@ -20,13 +20,13 @@ Usage:
         Use UDP (instead of TCP) when opening/closing port forward.
 ```
 
-###To discover your external IP:
+### To discover your external IP:
 ```
 $ ./openup -ip
 Your external IP is: 123.123.123.123
 ```
 
-###To open up a port forward:
+### To open up a port forward:
 ```
 $ ./openup -port 9978
 Opening port forward for TCP port 9978
@@ -35,7 +35,7 @@ $ ./openup -port 9979 -udp
 Opening port forward for UDP port 9979
 ```
 
-###To close a port forward:
+### To close a port forward:
 ```
 $ ./openup -close -port 5233 -udp
 Closing port forward for UDP port 5233
