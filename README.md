@@ -6,6 +6,12 @@ If you ever want to expose an IP address on a LAN to the internet, you can set a
 
 Then you can hit the external IP address at the given port and it will get forwarded to the given machine on the local network.
 
+## Building
+
+```
+go build openup.go
+```
+
 ## Usage
 ```
 $ ./openup -h
